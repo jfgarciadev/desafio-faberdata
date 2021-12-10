@@ -11,8 +11,11 @@
                 <a ng-class="{active: groupId == group.id}" ng-href="/home/{{group.id}}">{{group.title}}</a>
                 <div class="moreButton" ng-click="deleteGroup(group.id)"> x </div>
             </li>
-            <li ng-if="createGroupInputShow" ng-keyup="createGroup($event)">
-                <input type="text" ng-model="inputs.createGroupInput" placeholder="New group title">
+            <li ng-if="createGroupInputShow" ng-keyup="createGroup($event)" >
+                <input type="text" ng-model="inputs.createGroupInput" class="newGroupInput" placeholder="NEW GROUP TITLE">
+                <span class="newGroupInfo">
+                    press enter to create a new group
+                </span>
             </li>
         </ul>
     </div>
@@ -22,7 +25,7 @@
                 <thead>
                     <tr>
                         <th width="10%">
-                            <input type="checkbox" ng-model="checkAll" ng-click="checkAllTasks()">
+                            
                         </th>
                         <th width="40%">Title</th>
                         <th width="40%">Description</th>
@@ -37,10 +40,13 @@
                         </td>
                         <td>
                             <input type="text" ng-model="task.title" placeholder="New title"
-                                ng-change="updateTask(task)">
+                                ng-change="updateTask(task)" ng-class="{'disabled': task.status == '1'}" ng-disabled="task.status == '1'">
+
                         </td>
-                        <td><input type="text" ng-model="task.description" placeholder="New description"
-                                ng-change="updateTask(task)"></td>
+                        <td>
+                            <input type="text" ng-model="task.description" placeholder="New description"
+                                ng-change="updateTask(task)" ng-class="{'disabled': task.status == '1'}" ng-disabled="task.status == '1'">
+
                         </td>
                         <td>
                             <div class="moreButton moreButtonInverse" ng-click="deleteTask(task.id)"> &#9932; </div>
@@ -67,7 +73,7 @@
     </div>
 </div>
 <!-- logout button -->
-<div class="logoutButton" >
+<div class="logoutButton">
     <a href="#" ng-click="logout()">Logout</a>
 </div>
 
