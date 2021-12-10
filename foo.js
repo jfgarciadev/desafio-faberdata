@@ -1,0 +1,4 @@
+function getOk()
+{
+  alert('Hi');
+}

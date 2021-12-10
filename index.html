@@ -1,0 +1,22 @@
+<!-- a angularjs app -->
+<html ng-app="myApp">
+
+<head>
+    <title>TaskIN</title>
+    <script src="/angular/angular.js"></script>
+    <script src="/angular/angular-route.js"></script>
+    <script src="/app.js"></script>
+    <script src="/controllers/loginController.js"></script>
+    <script src="/controllers/registerController.js"></script>
+    <script src="/controllers/homeController.js"></script>
+    <link rel="stylesheet" href="/css/global.css">
+</head>
+
+<body>
+    <div ng-controller="myController">
+        <base href="/">
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>

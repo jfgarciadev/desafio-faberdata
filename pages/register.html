@@ -1,0 +1,17 @@
+<div ng-controller="registerController" id="loginController" class="center">
+    <h1>&lt; Task<span>IN</span> &gt;</h1>
+    <form name="registerForm" action="javascript:void(0);">
+        <span class="error" ng-if="error">{{error}}</span>
+        <label for="username">Username:</label>
+        <input type="text" ng-model="username" name="username" required>
+        <label for="email">E-mail:</label>
+        <input type="text" ng-model="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" ng-model="password" name="password" required>
+        <div class="row">
+            <a href="/login" class="loginRegisterLink">Login</a>
+            <input type="submit" ng-click="register()" value="Register">
+        </div>
+    </form>
+</div>
+<link rel="stylesheet" href="css/login.css">

@@ -1,0 +1,175 @@
+#homeController{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.lateralBar{
+    width: 250px;
+    height: 100%;
+    background-color: #4b4b4b;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+.lateralBar ul{
+    list-style: none;
+    padding: 0 20px;
+    margin: 0;
+}
+.lateralBar ul li h2{
+    text-transform: uppercase;
+    
+}
+.lateralBar ul li h2 span{
+    color: rgb(153, 0, 255);
+}
+
+.group{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.group:hover .moreButton{
+    display: block;
+    width: 10px;
+}
+
+.group .moreButton{
+    width: 0;
+    
+    display: none;
+    margin: 14px 0 0 5px;
+    height: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.group a{
+    width: 100%;
+    text-decoration: none;
+    color: aliceblue;
+    display: block;
+    padding: 10px 0 5px 10px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.group a:hover, .group .active{
+    background-color: rgb(153, 0, 255);
+    color: aliceblue;
+    border-radius: 10px;
+}
+
+.tasksMain{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 0;
+    left: 250px;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.tasksMain .container{
+    width: 70%;
+
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+
+}
+
+.tasksMain .container table{
+    font-size: 10px;
+    width: 100%;
+    /* height: 100%; */
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+.tasksMain .container table th{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tasksMain .container table tr td{
+    padding: 10px;
+    text-align: center;
+}
+
+.tasksMain .container table tbody{
+    height: unset;
+}
+
+
+.tasksMain .container table   input[type="text"]{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 10px;
+    color: #4b4b4b;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+.tasksMain .container table   input:focus{
+    outline: none;
+    border-bottom: 1px solid  rgb(153, 0, 255);
+    
+}
+
+.noTasks{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #4b4b4b;
+}
+
+.logoutButton{
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 30px;
+    background-color: rgb(255, 0, 106);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0px 0px 10px rgba(255, 0, 106, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.logoutButton:hover{
+    background-color: rgb(255, 0, 106);
+    box-shadow: 0px 0px 10px rgba(255, 0, 106, 1);
+}
+
+.logoutButton a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 10px 20px;
+}

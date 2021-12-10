@@ -1,0 +1,16 @@
+<div ng-controller="loginController" id="loginController" class="center">
+    <h1>&lt; Task<span>IN</span> &gt;</h1>
+    <form name="loginForm" ng-submit="login(loginForm)">
+        <span class="error" ng-if="error"  >username or password is incorrect</span>
+        <label for="username">Username:</label>
+        <input type="text" ng-model="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" ng-model="password" name="password" required>
+        <div class="row">
+            <a href="/register" class="loginRegisterLink">Register</a>
+            <input type="submit" ng-click="login(username, password)" value="Login">
+        </div>
+        
+    </form>
+</div>
+<link rel="stylesheet" href="css/login.css">

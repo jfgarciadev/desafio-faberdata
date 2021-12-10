@@ -1,0 +1,70 @@
+/* a style for the loginController */
+#loginController {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 300px;
+    border-radius: 5px;
+    padding: 0px 0px 20px 0px;
+    background-color: #4b4b4b;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#loginController h1 {
+    font-size: 40px;
+    color: rgb(211, 211, 211);
+    font-weight: bold;
+    margin: 20px 0px 15px 0px;
+}
+
+#loginController h1 span {
+    color: rgb(153, 0, 255);
+}
+
+#loginController label {
+    display: block;
+    margin: 5px 0;
+    color: rgb(133, 133, 133);
+}
+
+#loginController input {
+    display: block;
+    margin: 5px 0;
+    background-color: rgb(211, 211, 211);
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+#loginController input:hover,
+#loginController input:focus {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+
+}
+
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#loginController input[type="submit"] {
+    display: block;
+    margin: 20px 0 0 auto;
+    padding: 6px 10px;
+    background-color: rgb(153, 0, 255);
+    color: #fff;
+    border: none;
+}
+
+#loginController input[type="submit"]:hover {
+    background-color: #fff;
+    color: #000;
+}

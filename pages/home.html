@@ -1,0 +1,75 @@
+<div ng-controller="homeController" id="homeController" ng-init="init()">
+    <div class="lateralBar">
+        <ul>
+            <li>
+                <div class="row alignBetween">
+                    <h2>Task<span>in</span> groups</h2>
+                    <div class="moreButton" ng-click="createGroupInputShow = true"> + </div>
+                </div>
+            </li>
+            <li ng-repeat="group in groups" class="group">
+                <a ng-class="{active: groupId == group.id}" ng-href="/home/{{group.id}}">{{group.title}}</a>
+                <div class="moreButton" ng-click="deleteGroup(group.id)"> x </div>
+            </li>
+            <li ng-if="createGroupInputShow" ng-keyup="createGroup($event)">
+                <input type="text" ng-model="inputs.createGroupInput" placeholder="New group title">
+            </li>
+        </ul>
+    </div>
+    <div class="tasksMain" ng-init="getTasks()">
+        <div class="container">
+            <table class="table" ng-if="hasUrlGroupId">
+                <thead>
+                    <tr>
+                        <th width="10%">
+                            <input type="checkbox" ng-model="checkAll" ng-click="checkAllTasks()">
+                        </th>
+                        <th width="40%">Title</th>
+                        <th width="40%">Description</th>
+                        <th width="10%">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="task in tasks">
+                        <td>
+                            <input type="checkbox" ng-model="task.status" ng-true-value="'1'" ng-false-value="'0'"
+                                ng-change="updateTask(task)">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="task.title" placeholder="New title"
+                                ng-change="updateTask(task)">
+                        </td>
+                        <td><input type="text" ng-model="task.description" placeholder="New description"
+                                ng-change="updateTask(task)"></td>
+                        </td>
+                        <td>
+                            <div class="moreButton moreButtonInverse" ng-click="deleteTask(task.id)"> &#9932; </div>
+                        </td>
+                    </tr>
+                    <tr class="task">
+                        <td>
+                            <input type="checkbox" ng-model="newTask.status" ng-true-value="1" ng-false-value="0">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="newTask.title" placeholder="New task title" required>
+                        </td>
+                        <td><input type="text" ng-model="newTask.description" placeholder="New task description"></td>
+                        <td>
+                            <div class="moreButton moreButtonInverse" ng-click="createTask()"> + </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div ng-if="!hasUrlGroupId" class="noTasks">
+                <span>Select a group to see tasks</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- logout button -->
+<div class="logoutButton" >
+    <a href="#" ng-click="logout()">Logout</a>
+</div>
+
+
+<link rel="stylesheet" href="css/home.css">
