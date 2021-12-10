@@ -8,7 +8,6 @@ Link para acesso
 
 Sistema CRUD de tarefas
 
-
 - CREATE
 - VIEW
 - UPDATE
@@ -30,8 +29,11 @@ Tecnologias usadas
 
 ## Installation
 
-Inserir configurações abaixo em nginx.conf
+Inserir configurações abaixo em nginx.conf para:
 
+- Configuracao de rotas dinamicas do angular
+- Remoção da extensão .php em URL
+ 
 ```sh
 location / {
 	index       index index.html index.php;
@@ -45,7 +47,9 @@ location @extensionless-php {
 	rewrite ^(.*)$ $1.php last;
 }
 ```
+inserir tabelas descritas em database.sql no banco de dados
 
+alterar 
 
 ## License
 
