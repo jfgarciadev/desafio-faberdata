@@ -19,6 +19,17 @@ Sistema CRUD de tarefas
 - Tasks separadas por grupos.
 - Atualização em tempo real, sem a necesidade de salvar.
 
+## Steps
+
+- Realizar cadastro e login.
+- Criar Grupo de tarefas no icone "+"
+- Selecionar grupo criado
+- Criar tarefa inserindo as informaçoes da mesma
+- Alerar a tarefa (não é necessário salvar - realizado em tempo real)
+- Excluir a tarefa no botao "X" ao lado da mesma
+- Excluir Grupo no icone "X" ao lado do nome
+- Realizar Logout
+
 ## Tech
 
 Tecnologias usadas
@@ -31,7 +42,7 @@ Tecnologias usadas
 
 Inserir configurações abaixo em nginx.conf para:
 
-- Configuracao de rotas dinamicas do angular
+- configuraçao de rotas dinamicas do angular
 - Remoção da extensão .php em URL
  
 ```sh
@@ -49,7 +60,7 @@ location @extensionless-php {
 ```
 inserir tabelas descritas em database.sql no banco de dados
 
-alterar 
+alterar configurações de banco em /api/db
 
 ## License
 
